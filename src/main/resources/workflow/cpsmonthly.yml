@@ -1,0 +1,15 @@
+workflowName: cpsmonthly
+
+steps:
+  - name: DumpData
+    handler: com.xiaohshi.qlexpress.task.CpsMonthlyTask::dumpData
+    bind: DumpDataRunner
+
+  - name: FirstCompute
+    handler: com.xiaohshi.qlexpress.task.CpsMonthlyTask::firstCompute
+    bind: FirstComputeRunner
+#    inputs:
+#      - name: id
+#        type: int
+#      - name: name
+#        type: java.lang.String
