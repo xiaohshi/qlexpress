@@ -48,7 +48,7 @@ public class WorkflowLoader {
         ymlFiles.stream()
                 .map(file -> WorkflowLoader.class.getResourceAsStream("/" + file))
                 .filter(Objects::nonNull)
-                .map(inputStream ->  yaml.loadAs(inputStream, WorkflowModel.class))
+                .map(inputStream -> yaml.loadAs(inputStream, WorkflowModel.class))
                 .forEach(workflowModel -> {
                     String workflowName = workflowModel.getWorkflowName();
                     if (workflowList.contains(workflowName)) {
