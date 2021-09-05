@@ -38,13 +38,13 @@ inputs：handler中方法中的参数定义，顺序要与函数的参数，该�
 
 在项目启动的时候去加载所有的yml文件构建工作流的流程信息。
 
-2、利用spring容器和QLExpress实现整个流程，Springutil实现ApplicationContextAware接口可以获得ApplicationContext对象，从而可以获得spring容器中的对象，QLExpress是有阿里巴巴实现的规则引擎，也可以替换成反射执行，利用method.invoke方法，但是我个人认为利用QLExpress相对简单不少。
+2、利用spring容器和QLExpress实现整个流程，Springutil实现ApplicationContextAware接口可以获得ApplicationContext对象，从而可以获得spring容器中的对象，QLExpress是由阿里巴巴实现的规则引擎，也可以替换成反射执行，利用method.invoke方法，但是我个人认为利用QLExpress相对简单不少。
 
 执行流程：
 
 <img src="qlexpress.jpg" alt="qlexpress" style="zoom: 67%;" />
 
-该demo依然使用策略模式、模板模式和工厂模式，，采用切面编程的思想，相比原方案，利用yml、spring和QLExpress简化其结构，并且本身的业务代码不需要实现任何接口，不用关心内部的结构，利用yml去定义工作流，更加直观和方便。
+该demo依然使用策略模式、模板模式和工厂模式，采用切面编程的思想，相比原方案，利用yml、spring和QLExpress简化其结构，并且本身的业务代码不需要实现任何接口，不用关心内部的结构，利用yml去定义工作流，更加直观和方便。
 
 要求：
 
