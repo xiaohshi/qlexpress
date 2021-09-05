@@ -64,7 +64,7 @@ public class FirstComputeRunner extends Runner {
                        , stepModel.getMethodName(), classes,null);
            }
            runner.execute(text, expressContext, null, true, false);
-        }catch(Exception e){
+        } catch (Exception e){
             log.error("qlExpress运行出错！", e);
         }
     }

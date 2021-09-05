@@ -40,7 +40,7 @@ public class DumpDataRunner extends Runner {
                         , stepModel.getMethodName(), new Class[]{},null);
             }
             runner.execute(text, expressContext, null, true, false);
-        } catch(Exception e) {
+        } catch (Exception e) {
             log.error("qlExpress运行出错！", e);
         }
     }
