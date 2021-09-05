@@ -37,7 +37,7 @@ public class DumpDataRunner extends Runner {
             if (runner.getFunciton(workflow + "_" + step) == null) {
                 runner.addFunctionOfServiceMethod(workflow + "_" + step
                         , SpringUtil.getContext().getBean(stepModel.getClazz())
-                        , stepModel.getMethodName(), new Class[]{},null);
+                        , stepModel.getMethodName(), new Class[]{}, null);
             }
             runner.execute(text, expressContext, null, true, false);
         } catch (Exception e) {

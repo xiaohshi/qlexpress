@@ -61,10 +61,10 @@ public class FirstComputeRunner extends Runner {
            if (runner.getFunciton(workflow + "_" + step) == null) {
                runner.addFunctionOfServiceMethod(workflow + "_" + step
                        , SpringUtil.getContext().getBean(stepModel.getClazz())
-                       , stepModel.getMethodName(), classes,null);
+                       , stepModel.getMethodName(), classes, null);
            }
            runner.execute(text, expressContext, null, true, false);
-        } catch (Exception e){
+        } catch (Exception e) {
             log.error("qlExpress运行出错！", e);
         }
     }
