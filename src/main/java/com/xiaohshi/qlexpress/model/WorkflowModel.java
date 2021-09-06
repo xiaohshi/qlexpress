@@ -13,8 +13,11 @@ import java.util.List;
 @Builder
 public class WorkflowModel {
 
-    @NonNull
     private String workflowName;
+
+    private String app;
+
+    private String type;
 
     private List<TaskModel> steps;
 }

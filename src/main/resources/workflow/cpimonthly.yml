@@ -1,10 +1,13 @@
 workflowName: cpimonthly
 
+app: cpi
+type: monthly
+
 steps:
   - name: DumpData
-    handler: com.xiaohshi.qlexpress.task.CpiMonthlyTask::dumpData
+    handler: com.xiaohshi.qlexpress.task.CpiMonthlyTask::isDataReady
     bind: DumpDataRunner
 
   - name: FirstCompute
-    handler: com.xiaohshi.qlexpress.task.CpiMonthlyTask::firstCompute
+    handler: com.xiaohshi.qlexpress.task.CpiMonthlyTask::getBaseCommission
     bind: FirstComputeRunner

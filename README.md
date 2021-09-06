@@ -7,6 +7,9 @@
 ```yaml
 workflowName: cpsmonthly
 
+app: cps
+type: monthly
+
 steps:
   - name: DumpData
     handler: com.xiaohshi.qlexpress.task.CpsMonthlyTask::dumpData
@@ -25,6 +28,10 @@ steps:
 上面定义了一个名为cpsmonthly的工作流
 
 workflowName：工作流的名称，不允许重复
+
+app: 标记该工作流的app，例如cpi、cps等
+
+type：工作流的类型，只有monthly和daily两种想法
 
 steps：该工作流的流程
 

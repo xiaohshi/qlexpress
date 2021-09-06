@@ -16,5 +16,8 @@ public class TaskModel {
 
     private String bind;
 
+    // 表示运行状态
+    private String status;
+
 //    private List<ParamModel> inputs;
 }

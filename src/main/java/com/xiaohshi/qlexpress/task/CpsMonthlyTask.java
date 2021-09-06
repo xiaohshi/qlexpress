@@ -6,14 +6,14 @@ import org.springframework.stereotype.Component;
  * 测试 cps月结
  * 必须要注入到spring容器中
  */
-@Component
+@Component("CpsMonthlyTask")
 public class CpsMonthlyTask {
 
-    public void dumpData() {
+    public void isDataReady() {
         System.out.println("cps monthly 下载数据");
     }
 
-    public void firstCompute(int id, String name) {
+    public void getBaseCommission(int id, String name) {
         System.out.println("cps monthly 第一次计算 from " + name + "::" + id);
     }
 

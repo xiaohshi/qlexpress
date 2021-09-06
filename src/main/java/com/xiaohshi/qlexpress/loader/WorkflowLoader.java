@@ -5,6 +5,7 @@ import com.xiaohshi.qlexpress.model.StepModel;
 import com.xiaohshi.qlexpress.model.WorkflowModel;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang.StringUtils;
 import org.reflections.Reflections;
 import org.reflections.scanners.ResourcesScanner;
 import org.yaml.snakeyaml.Yaml;
@@ -17,10 +18,10 @@ import java.util.function.Consumer;
 import java.util.regex.Pattern;
 
 /**
- * 扫描workflow包里面的yml文件，构建出工作流信息
+ * 扫描workflow包里面的yml文件，构建出工作流信息，也可以注入到spring中，利用@PostConstruct或者init启动时执行
  */
 @Slf4j
-public class WorkflowLoader {
+public class WorkflowLoader{
 
     // 所有workflow对象
     @Getter
@@ -53,6 +54,9 @@ public class WorkflowLoader {
                     String workflowName = workflowModel.getWorkflowName();
                     if (workflowList.contains(workflowName)) {
                         throw new IllegalStateException("workflow:" + workflowName + " already exists");
+                    }
+                    if (StringUtils.isBlank(workflowModel.getType()) || StringUtils.isBlank(workflowModel.getApp())) {
+                        throw new IllegalStateException("app or type is null, please check");
                     }
                     workflowList.add(workflowName);
                     modelMap.put(workflowName, workflowModel);

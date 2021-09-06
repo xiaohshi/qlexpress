@@ -1,12 +1,15 @@
 workflowName: cpsmonthly
 
+app: cps
+type: monthly
+
 steps:
   - name: DumpData
-    handler: com.xiaohshi.qlexpress.task.CpsMonthlyTask::dumpData
+    handler: com.xiaohshi.qlexpress.task.CpsMonthlyTask::isDataReady
     bind: DumpDataRunner
 
   - name: FirstCompute
-    handler: com.xiaohshi.qlexpress.task.CpsMonthlyTask::firstCompute
+    handler: com.xiaohshi.qlexpress.task.CpsMonthlyTask::getBaseCommission
     bind: FirstComputeRunner
 #    inputs:
 #      - name: id

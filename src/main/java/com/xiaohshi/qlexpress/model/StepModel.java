@@ -18,10 +18,10 @@ public class StepModel {
     private Class<?> clazz;
 
     @NonNull
-    private String stepName;
+    private String workflowName;
 
     @NonNull
-    private String workflowName;
+    private String stepName;
 
     @NonNull
     private String className;

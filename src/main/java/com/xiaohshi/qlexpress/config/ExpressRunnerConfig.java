@@ -12,6 +12,7 @@ public class ExpressRunnerConfig {
 
     @Bean
     public ExpressRunner getRunner() {
+        System.out.println("构造中");
         return new ExpressRunner();
     }
 
