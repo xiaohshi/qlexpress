@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
  * 测试 cps月结
  * 必须要注入到spring容器中
  */
-@Component("CpsMonthlyTask")
+@Component
 public class CpsMonthlyTask {
 
     public void isDataReady() {
