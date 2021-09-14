@@ -1,4 +1,4 @@
-package com.xiaohshi.qlexpress.excute;
+package com.xiaohshi.qlexpress.execute;
 
 import com.ql.util.express.ExpressRunner;
 import com.ql.util.express.IExpressContext;
@@ -7,7 +7,6 @@ import com.xiaohshi.qlexpress.loader.WorkflowLoader;
 import com.xiaohshi.qlexpress.model.ParamModel;
 import com.xiaohshi.qlexpress.model.StepModel;
 import com.xiaohshi.qlexpress.utils.SpringUtil;
-import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashMap;
 import java.util.List;
@@ -17,11 +16,11 @@ import java.util.stream.Collectors;
 /**
  * 方便使用策略模式
  */
-public interface Runner {
+public abstract class Runner {
 
-    void execute(String workflow, String step, String text, Object...params);
+    public abstract void execute(String workflow, String step, String text, Object...params);
 
-    default void executeMyTask(ExpressRunner runner
+    protected void executeMyTask(ExpressRunner runner
             , String workflow, String step, String text, Object...params) throws Exception {
         // 保存业务运行的函数参数
         Map<String, Object> map = new HashMap<>();

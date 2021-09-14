@@ -1,6 +1,6 @@
 package com.xiaohshi.qlexpress.controller;
 
-import com.xiaohshi.qlexpress.excute.Runner;
+import com.xiaohshi.qlexpress.execute.Runner;
 import com.xiaohshi.qlexpress.loader.WorkflowLoader;
 import com.xiaohshi.qlexpress.model.ParamModel;
 import com.xiaohshi.qlexpress.model.WorkflowModel;
@@ -42,7 +42,7 @@ public class TestController {
             }
             methodName.append(")");
 
-            Runner runner = SpringUtil.getBean(step.getBind());
+            Runner runner = SpringUtil.getBean(step.getHandler());
             runner.execute(workflow, step.getName(),  methodName.toString(), params);
         });
         return "test";

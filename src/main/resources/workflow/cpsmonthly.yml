@@ -10,7 +10,7 @@ steps:
 
   - name: FirstCompute
     handler: com.xiaohshi.qlexpress.task.CpsMonthlyTask::getBaseCommission
-    bind: FirstComputeRunner
+    bind: SettleRunner
 #    inputs:
 #      - name: id
 #        type: int

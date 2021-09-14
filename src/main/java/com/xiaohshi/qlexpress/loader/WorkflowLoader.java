@@ -67,21 +67,21 @@ public class WorkflowLoader{
             // 利用workflowName_stepName这种形式可以获取到确定的步骤
             String template = workflow.getWorkflowName() + "_" + step.getName();
 
-            String[] handler = step.getHandler().split("::");
+            String[] task = step.getTask().split("::");
             try {
-                Class<?> clazz = Class.forName(handler[0]);
+                Class<?> clazz = Class.forName(task[0]);
 
                 Arrays.stream(clazz.getMethods())
-                        .filter(method -> handler[1].equals(method.getName()))
+                        .filter(method -> task[1].equals(method.getName()))
                         .forEach(method -> setParamMap(template, method));
 
                 StepModel stepModel = StepModel.builder()
                         .workflowName(workflow.getWorkflowName())
                         .stepName(step.getName())
                         .className(clazz.getName())
-                        .methodName(handler[1])
+                        .methodName(task[1])
                         .clazz(clazz)
-                        .bind(step.getBind())
+                        .handler(step.getHandler())
                         .inputList(paramMap.get(template))
                         .build();
 

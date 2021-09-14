@@ -27,7 +27,7 @@ public class StepModel {
     private String methodName;
 
     @NonNull
-    private String bind;
+    private String handler;
 
     private List<ParamModel> inputList;
 

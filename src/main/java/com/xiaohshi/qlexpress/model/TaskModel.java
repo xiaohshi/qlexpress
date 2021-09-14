@@ -12,9 +12,9 @@ import lombok.*;
 public class TaskModel {
     private String name;
 
-    private String handler;
+    private String task;
 
-    private String bind;
+    private String handler;
 
     // 表示运行状态
     private String status;

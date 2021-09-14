@@ -1,24 +1,30 @@
-package com.xiaohshi.qlexpress.excute;
+package com.xiaohshi.qlexpress.execute.handler;
 
 import com.ql.util.express.ExpressRunner;
+import com.xiaohshi.qlexpress.execute.Runner;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * 第一次执行的模板执行器
+ * 下载数据的模板执行器
  * 需要设置beanName
  */
 @Slf4j
-@Component("FirstComputeRunner")
-public class FirstComputeRunner implements Runner {
+@Component("DumpDataRunner")
+public class DumpDataRunner extends Runner {
+
+    private ExpressRunner runner;
 
     @Autowired
-    private ExpressRunner runner;
+    public void setRunner(ExpressRunner runner) {
+        this.runner = runner;
+    }
 
     @Override
     public void execute(String workflow, String step, String text, Object...params) {
-        log.info("第一次计算");
+        // 这里需要想象是一个模板方法，这块是公共的业务
+        log.info("执行下载数据");
         try {
             executeMyTask(runner, workflow, step, text, params);
         } catch (Exception e) {

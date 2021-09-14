@@ -5,9 +5,9 @@ type: monthly
 
 steps:
   - name: DumpData
-    handler: com.xiaohshi.qlexpress.task.CpiMonthlyTask::isDataReady
-    bind: DumpDataRunner
+    task: com.xiaohshi.qlexpress.task.CpiMonthlyTask::isDataReady
+    handler: DumpDataRunner
 
   - name: FirstCompute
-    handler: com.xiaohshi.qlexpress.task.CpiMonthlyTask::getBaseCommission
-    bind: FirstComputeRunner
+    task: com.xiaohshi.qlexpress.task.CpiMonthlyTask::getBaseCommission
+    handler: SettleRunner
