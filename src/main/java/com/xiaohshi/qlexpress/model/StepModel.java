@@ -14,7 +14,6 @@ import java.util.List;
 @NonNull
 public class StepModel {
 
-    @NonNull
     private Class<?> clazz;
 
     @NonNull
@@ -23,10 +22,8 @@ public class StepModel {
     @NonNull
     private String stepName;
 
-    @NonNull
     private String className;
 
-    @NonNull
     private String methodName;
 
     @NonNull
